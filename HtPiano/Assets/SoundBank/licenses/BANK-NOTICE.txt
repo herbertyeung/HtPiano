@@ -1,0 +1,1 @@
+The bank contains the PCM16 recordings described in YamahaC5 and Versilian notices. Repackaged from HtPiano source ZIPs as a single PCM bank, without further resampling, by tools/prepare_banks.py.

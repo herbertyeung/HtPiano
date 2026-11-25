@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>HtPiano — open piano</title>
+  <rect x="4" y="4" width="248" height="248" rx="52" fill="#385147"/>
+  <rect x="9" y="9" width="238" height="238" rx="48" fill="#152521"/>
+  <!-- The lifted lid and its prop sit just above the keybed. -->
+  <polygon points="173,69 184,66 194,113 181,113" fill="#738C7C"/>
+  <polygon points="34,103 208,43 215,57 36,113" fill="#F1C979"/>
+  <rect x="33" y="116" width="190" height="13" rx="4" fill="#007B67"/>
+  <rect x="34" y="135" width="34" height="70" rx="5" fill="#F4F2E8"/>
+  <rect x="72" y="135" width="34" height="70" rx="5" fill="#F4F2E8"/>
+  <rect x="110" y="135" width="34" height="70" rx="5" fill="#F1C979"/>
+  <rect x="148" y="135" width="34" height="70" rx="5" fill="#F4F2E8"/>
+  <rect x="186" y="135" width="34" height="70" rx="5" fill="#F4F2E8"/>
+  <rect x="59" y="131" width="21" height="44" rx="3" fill="#101D1A"/>
+  <rect x="98" y="131" width="21" height="44" rx="3" fill="#101D1A"/>
+  <rect x="174" y="131" width="21" height="44" rx="3" fill="#101D1A"/>
+</svg>

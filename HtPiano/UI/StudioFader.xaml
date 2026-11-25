@@ -1,0 +1,54 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ControlTemplate x:Key="StudioFaderRail" TargetType="RepeatButton">
+        <Grid Background="Transparent">
+            <Border Height="4" VerticalAlignment="Center" CornerRadius="2"
+                    Background="{TemplateBinding Background}"/>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="StudioFaderThumb" TargetType="Thumb">
+        <Grid Width="14" Background="Transparent">
+            <Ellipse Width="12" Height="12" Fill="{DynamicResource Paper}"/>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="StudioFaderTemplate" TargetType="Slider">
+        <Border x:Name="FocusRing" CornerRadius="5" BorderBrush="Transparent"
+                BorderThickness="1" Padding="3,0" Background="Transparent">
+            <Track x:Name="PART_Track" Orientation="Horizontal"
+                   IsDirectionReversed="{TemplateBinding IsDirectionReversed}">
+                <Track.DecreaseRepeatButton>
+                    <RepeatButton Command="{x:Static Slider.DecreaseLarge}" Focusable="False"
+                                  Background="#89C7AB" Template="{StaticResource StudioFaderRail}"/>
+                </Track.DecreaseRepeatButton>
+                <Track.Thumb>
+                    <Thumb Focusable="False" Template="{StaticResource StudioFaderThumb}"/>
+                </Track.Thumb>
+                <Track.IncreaseRepeatButton>
+                    <RepeatButton Command="{x:Static Slider.IncreaseLarge}" Focusable="False"
+                                  Background="{DynamicResource Line}" Template="{StaticResource StudioFaderRail}"/>
+                </Track.IncreaseRepeatButton>
+            </Track>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                <Setter TargetName="FocusRing" Property="BorderBrush" Value="{DynamicResource Accent}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="FocusRing" Property="Opacity" Value="0.45"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="StudioFader" TargetType="Slider">
+        <Setter Property="MinHeight" Value="26"/>
+        <Style.Triggers>
+            <!-- Leave the system slider template intact in high contrast. -->
+            <DataTrigger Binding="{Binding Path=(SystemParameters.HighContrast)}" Value="False">
+                <Setter Property="Template" Value="{StaticResource StudioFaderTemplate}"/>
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

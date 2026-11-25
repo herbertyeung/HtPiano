@@ -1,0 +1,14 @@
+PianoNative — htpiano.dll
+Copyright (c) 2026 Herbert Yeung
+
+中文
+
+本授权仅适用于 PianoNative 运行库 htpiano.dll。非商业项目可以使用该 DLL，并将未经修改的原版 DLL 随其程序分发。商业使用或商业分发须事先另行取得 Herbert Yeung 的授权。
+
+上述许可不包括分发修改版 DLL 或单独分发 DLL。PianoNative 的 C++ 实现保持闭源。公开头文件 htpiano.h 和 HtPiano 客户端使用 MIT 许可证，不受本 DLL 条款限制。音色采样适用各自的许可。
+
+English
+
+These terms apply only to the PianoNative runtime, htpiano.dll. Non-commercial projects may use the DLL and distribute the original, unmodified DLL with their applications. Commercial use or commercial distribution requires prior, separate authorization from Herbert Yeung.
+
+This permission does not cover distribution of a modified DLL or distribution of the DLL on its own. The PianoNative C++ implementation is closed source. The public header htpiano.h and the HtPiano client are MIT-licensed and are not subject to these DLL terms. The audio samples retain their own licenses.

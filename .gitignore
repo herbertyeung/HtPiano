@@ -1,0 +1,24 @@
+# Local builds, IDE state and recordings
+**/bin/
+**/obj/
+.vs/
+.vscode/
+*.suo
+*.user
+*.htkeys
+/shots/
+/.planning/
+/artifacts/
+publish/
+*.zip
+
+*.dll
+*.exe
+*.pdb
+
+# Keep the SDK interface and the Windows x64 runtime, not build intermediates.
+/sdk/PianoNative/*
+!/sdk/PianoNative/README.md
+!/sdk/PianoNative/DLL-LICENSE.txt
+!/sdk/PianoNative/htpiano.h
+!/sdk/PianoNative/htpiano.dll

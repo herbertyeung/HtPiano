@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets/Piano.ico</ApplicationIcon>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <AssemblyName>HtPiano</AssemblyName>
+    <RootNamespace>HtPiano</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../LICENSE;../ATTRIBUTION.md" Link="%(Filename)%(Extension)"
+          CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Resource Include="Assets/Piano.ico" />
+    <EmbeddedResource Include="Languages/en.json" LogicalName="HtPiano.Languages.en.json" />
+    <None Update="Languages/*.json;Languages/README.md" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Include="../sdk/PianoNative/htpiano.h" Link="NativeSdk/htpiano.h" />
+    <None Include="../sdk/PianoNative/DLL-LICENSE.txt" Link="native/DLL-LICENSE.txt"
+          CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="../sdk/PianoNative/htpiano.dll" Link="native/htpiano.dll"
+             CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+    <Content Include="Assets/SoundBank/**/*" Link="%(RecursiveDir)%(Filename)%(Extension)"
+             CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <Target Name="CheckPianoNative" BeforeTargets="PrepareForBuild" Condition="'$(DesignTimeBuild)' != 'true'">
+    <Error Condition="!Exists('$(MSBuildProjectDirectory)/../sdk/PianoNative/htpiano.dll') Or !Exists('$(MSBuildProjectDirectory)/../sdk/PianoNative/htpiano.h')"
+           Text="The bundled PianoNative SDK is incomplete. Restore sdk/PianoNative/htpiano.h and sdk/PianoNative/htpiano.dll from this checkout." />
+  </Target>
+</Project>
